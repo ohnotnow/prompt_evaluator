@@ -30,7 +30,7 @@ All platforms (MacOS, Ubuntu, Windows)
 uv sync
 ```
 
-> This will read your project’s dependency configuration and install them into a local virtual environment.  
+> This will read your project’s dependency configuration and install them into a local virtual environment.
 > Visit https://docs.astral.sh/uv/ for full uv documentation.
 
 ---
@@ -52,23 +52,23 @@ The backslash (`\`) ensures flags are passed to `main.py` rather than to `uv`.
 
 Required LLM selection (exactly one):
 
-  • `--llm-list`  
-    Comma-separated list of LLM identifiers (e.g. `openai/gpt-4,openrouter/llama4.0`)  
-  • `--llm-file`  
+  • `--llm-list`
+    Comma-separated list of LLM identifiers (e.g. `openai/gpt-4,openrouter/llama4.0`)
+  • `--llm-file`
     Path to a newline-separated file of LLM identifiers (comments and blank lines are ignored)
 
 Required prompt selection (exactly one):
 
-  • `--prompt-string`  
-    Prompt text directly on the CLI  
-  • `--prompt-file`  
+  • `--prompt-string`
+    Prompt text directly on the CLI
+  • `--prompt-file`
     Path to a file containing the user prompt
 
 Optional system prompt (mutually exclusive):
 
-  • `--system-prompt`  
-    System prompt text directly on the CLI  
-  • `--system-prompt-file`  
+  • `--system-prompt`
+    System prompt text directly on the CLI
+  • `--system-prompt-file`
     Path to a file containing the system prompt
 
 ### Example with files
@@ -103,6 +103,17 @@ uv run main.py -- \
   ]
   ```
 
+## Example llm file
+The code uses [litellm](https://docs.litellm.ai/docs/) under the hood - so the format of the model names follows their convention.
+
+```
+openai/o4-mini
+openai/gpt-4.1
+# you can comment out lines
+anthropic/claude-sonnet-4
+openrouter/google/gemini-2.5-flash
+```
+
 ---
 
 ## Development
@@ -121,9 +132,9 @@ python main.py --help
 
 ## Contributing
 
-1. Fork the repository  
-2. Create a feature branch (`git checkout -b feature/xyz`)  
-3. Commit your changes  
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/xyz`)
+3. Commit your changes
 4. Open a pull request
 
 ---
